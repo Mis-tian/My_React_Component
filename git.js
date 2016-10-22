@@ -1,5 +1,0 @@
-alert()
-alert()
-alert()
-alert()
-
