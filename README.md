@@ -1,12 +1,12 @@
 ### 小标题  
-
-
-component start
- 
+  小标题类似html的\<h3\><br />  
+  小标题的格式如下 ### 小标题<br />  
+  注意#和标题字符中间要有空格  
   
-### 命令  
-    开发 npm run dev 
-    打包 npm run start 
+### 注意!!!下面所有语法的提示我都先用小标题提醒了!!!   
+  
+### 单行文本框  
+    这是一个单行的文本框,只要两个Tab再输入文字即可  
           
 ### 多行文本框    
     这是一个有多行的文本框  
@@ -28,7 +28,7 @@ component start
 ### 链接  
 1.[点击这里你可以链接到www.google.com](http://www.google.com)<br />  
 2.[点击这里我你可以链接到我的博客](http://guoyunsky.iteye.com)<br />  
-  1
+  
 ###只是显示图片  
 ![github](http://github.com/unicorn.png "github")  
   

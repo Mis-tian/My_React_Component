@@ -1,59 +1,19 @@
-import React,{ Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, {Component, PropTypes} from 'react';
+import ReactDOM from 'react-dom';   
 import 'babel-polyfill';
-import  './common';
-// import $ from 'zepto';
-import $ from 'jquery';
+import { Router, Route, Link , hashHistory} from 'react-router';
+import Tv from  './tv';
+import App from  './app';
+import Show from  './show';
+import '../sass/bootstrap';
 import '../sass/index';
-
-class App extends Component {
-    constructor(props, context) {
-        super(props, context);
-        this.state = {val:'',lis:null}
-    }
-    async onC(e){
-       
-        let This = this;
-         this.setState({val:e.target.value});
-        const li = await function (){
-            return new Promise(function (resolve, reject) {
-                        $.ajax({
-                            url: "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?",
-                    
-                            jsonp: "cb",
-                        
-                            dataType: "jsonp",
-                        
-                            data: {
-                                wd: This.state.val,
-                            },
-                            success(response){
-                                resolve(response);
-                            },
-                            error(error){
-                                reject(error);
-                            }
-                        });
-
-                });
-        }();
-        const lis = li.s.map( (item,index)=>{
-            return <li key={index}>{item}</li>
-        } );
-
-         this.setState({lis});
-    }
-    
-    render() {
-        return (
-            <div>
-                <input value={this.state.val} onChange={this.onC.bind(this)}/>
-                <ul>
-                    {this.state.lis}
-                </ul>
-            </div>
-        );
-    }
-}
-
-ReactDOM.render(<App/>,document.getElementById('app'));
+ReactDOM.render((
+    <Router history={hashHistory}>
+        <Route path="/" component={App}>
+            <Route path="/tv" component={Tv}>
+                <Route path="/tv/Show" component={Show}/>
+            </Route>  
+            <Route path="/refs" component={Show}/>      
+        </Route>
+    </Router>
+),document.getElementById('app'));
