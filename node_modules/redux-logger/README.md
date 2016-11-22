@@ -1,5 +1,8 @@
 # Logger for Redux
+[![npm](https://img.shields.io/npm/v/redux-logger.svg?maxAge=2592000?style=plastic)]()
+[![npm](https://img.shields.io/npm/dm/redux-logger.svg?maxAge=2592000?style=plastic)]()
 [![Build Status](https://travis-ci.org/evgenyrodionov/redux-logger.svg?branch=master)](https://travis-ci.org/evgenyrodionov/redux-logger)
+[![dependencies Status](https://david-dm.org/evgenyrodionov/redux-logger/status.svg)](https://david-dm.org/evgenyrodionov/redux-logger)
 
 ![redux-logger](http://i.imgur.com/pMR3OAv.png)
 
@@ -15,6 +18,7 @@
   * [Transform Immutable (without `combineReducers`)](#transform-immutable-without-combinereducers)
   * [Transform Immutable (with `combineReducers`)](#transform-immutable-with-combinereducers)
   * [Log batched actions](#log-batched-actions)
+* [Known issues](#known-issues) (with `react-native` only at this moment)
 * [License](#license)
 
 ## Install
@@ -273,6 +277,9 @@ export default createLogger({
   logger
 });
 ```
+
+## Known issues
+* Performance issues in react-native ([#32](https://github.com/evgenyrodionov/redux-logger/issues/32))
 
 ## License
 MIT
