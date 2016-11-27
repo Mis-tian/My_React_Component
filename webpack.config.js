@@ -130,6 +130,7 @@ module.exports = {
       }
     },
     plugins:[
+      new webpack.NoErrorsPlugin()
       //提公用js到common.js文件中
       // new webpack.optimize.CommonsChunkPlugin('src','js/common.js'),
       //使用ProvidePlugin加载使用频率高的模块
